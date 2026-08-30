@@ -1,0 +1,58 @@
+[
+  {
+    "id": 0,
+    "title": "Got The Blues",
+    "artist": "Dax",
+    "duration": "4:12",
+    "src": "/audio/GotTheBluesRoughMix2026-08-23.mp3"
+  },
+  {
+    "id": 1,
+    "title": "Eskimo Joe",
+    "artist": "Dax",
+    "duration": "3:35",
+    "src": "/audio/EskimoJoeRoughMix2026-08-23.mp3"
+  },
+  {
+    "id": 2,
+    "title": "Minimum Wage",
+    "artist": "Dax",
+    "duration": "4:13",
+    "src": "/audio/MinimumWageRockingRoughMix2026-08-23.mp3"
+  },
+  {
+    "id": 3,
+    "title": "If It's God",
+    "artist": "Dax",
+    "duration": "2:38",
+    "src": "/audio/IfItsGodRoughMix2026-08-23.mp3"
+  },
+  {
+    "id": 4,
+    "title": "Open Your Eyes",
+    "artist": "Dax",
+    "duration": "3:45",
+    "src": "/audio/OpenYourEyesRoughMix2026-08-23.mp3"
+  },
+  {
+    "id": 5,
+    "title": "Tapu",
+    "artist": "Dax",
+    "duration": "3:28",
+    "src": "/audio/TapuRoughMix2026-08-23.mp3"
+  },
+  {
+    "id": 6,
+    "title": "Sixties Protest Song",
+    "artist": "Dax",
+    "duration": "3:34",
+    "src": "/audio/SixtiesProtestSongRoughMix2026-08-23.mp3"
+  },
+  {
+    "id": 7,
+    "title": "When It's Cloudy",
+    "artist": "Dax",
+    "duration": "3:24",
+    "src": "/audio/WhenItsCloudyRoughMix2026-08-23.mp3"
+  }
+]
