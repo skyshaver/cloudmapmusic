@@ -18,6 +18,8 @@ const nextButton = document.getElementById("next");
 const previousButton = document.getElementById("previous");
 const playingSong = document.getElementById("player-song-title");
 const songArtist = document.getElementById("player-song-artist");
+const playerSeekbar = document.getElementById("player-seekbar");
+let mouseDownOnSeekbar = false;
 
 const audio = new Audio();
 
@@ -31,7 +33,7 @@ const playSong = (id, start=true) => {
     audio.currentTime = playerData.songCurrentTime;
   }
   playerData.currentSong = song;
-  playButton.classList.add("playing");
+  playButton.classList.add("playing");  
   setPlayerDisplay();
   highlightCurrentSong();
   setPlayButtonAccessibleText();
@@ -86,6 +88,18 @@ const setPlayerDisplay = () => {
   songArtist.textContent = currentArtist ? currentArtist : "";
 };
 
+const setPlayButtonAccessibleText = () => {
+  const song = playerData.currentSong;
+  playButton.setAttribute("aria-label", playerData.currentSong ? `Play ${song.title}` : "Play");
+};
+
+const setSeekbarValues = () => {
+  if(audio) {      
+    playerSeekbar.setAttribute("max", Math.floor(audio.duration));
+    console.log(playerSeekbar);
+  }
+}
+
 const highlightCurrentSong = () => {
   const previousCurrentSong = document.querySelector('.playlist-song[aria-current="true"]');
   previousCurrentSong?.removeAttribute("aria-current");
@@ -96,10 +110,6 @@ const highlightCurrentSong = () => {
   songToHighlight?.setAttribute("aria-current", "true");
 };
 
-const setPlayButtonAccessibleText = () => {
-  const song = playerData.currentSong;
-  playButton.setAttribute("aria-label", playerData.currentSong ? `Play ${song.title}` : "Play");
-};
 
 playButton.addEventListener("click", () => {
   if (playerData.currentSong === null) {
@@ -124,5 +134,25 @@ pauseButton.addEventListener("click", pauseSong);
 nextButton.addEventListener("click", playNextSong);
 
 previousButton.addEventListener("click", playPreviousSong);
+
+playerSeekbar.addEventListener("mousedown", () => {  
+  mouseDownOnSeekbar = true;
+  pauseSong();
+});
+
+playerSeekbar.addEventListener("mouseup", () => {  
+  mouseDownOnSeekbar = false;
+  const seekBarVal = playerSeekbar.value;
+  audio.currentTime = seekBarVal;
+  playerData.songCurrentTime = seekBarVal;
+  audio.play();
+});
+
+audio.addEventListener("loadeddata", setSeekbarValues);
+
+audio.addEventListener("timeupdate", () => {
+  if(!mouseDownOnSeekbar)
+    playerSeekbar.value = audio.currentTime;
+});
 
 audio.addEventListener("ended", playNextSong);

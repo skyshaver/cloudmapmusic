@@ -67,7 +67,8 @@
   }
 
   .player-bar,
-  .playlist-bar {
+  .playlist-bar,
+  .player-seekbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
