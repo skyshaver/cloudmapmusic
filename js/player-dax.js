@@ -1,4 +1,4 @@
-const userData = {
+const playerData = {
   songs: null,
   currentSong: null,
   songCurrentTime: 0,
@@ -6,7 +6,7 @@ const userData = {
 
 async function fetchPlaylistJson() {
   const response = await fetch("/json/dax-playlist.json");
-  userData.songs = await response.json();  
+  playerData.songs = await response.json();  
 }
 fetchPlaylistJson();
 
@@ -22,15 +22,15 @@ const songArtist = document.getElementById("player-song-artist");
 const audio = new Audio();
 
 const playSong = (id, start=true) => {
-  const song = userData.songs.find((song) => song.id === id);
+  const song = playerData.songs.find((song) => song.id === id);
   audio.src = song.src;
   audio.title = song.title;
-  if (userData.currentSong === null || start) {
+  if (playerData.currentSong === null || start) {
     audio.currentTime = 0;
   } else {
-    audio.currentTime = userData.songCurrentTime;
+    audio.currentTime = playerData.songCurrentTime;
   }
-  userData.currentSong = song;
+  playerData.currentSong = song;
   playButton.classList.add("playing");
   setPlayerDisplay();
   highlightCurrentSong();
@@ -39,38 +39,38 @@ const playSong = (id, start=true) => {
 };
 
 const pauseSong = () => {
-  userData.songCurrentTime = audio.currentTime;
+  playerData.songCurrentTime = audio.currentTime;
   playButton.classList.remove("playing");
   audio.pause();
 };
 
-const getCurrentSongIndex = () => userData.songs.indexOf(userData.currentSong);
+const getCurrentSongIndex = () => playerData.songs.indexOf(playerData.currentSong);
 
-const getNextSong = () => userData.songs[getCurrentSongIndex() + 1];
+const getNextSong = () => playerData.songs[getCurrentSongIndex() + 1];
 
-const getPreviousSong = () => userData.songs[getCurrentSongIndex() - 1];
+const getPreviousSong = () => playerData.songs[getCurrentSongIndex() - 1];
 
 const playPreviousSong = () => {
-  if (userData.currentSong === null) return;
+  if (playerData.currentSong === null) return;
   const previousSong = getPreviousSong();
   if (previousSong) {
     playSong(previousSong.id);
   } else {
-    playSong(userData.songs[0].id);
+    playSong(playerData.songs[0].id);
   }
 };
 
 const playNextSong = () => {
-  if (userData.currentSong === null) {
-    playSong(userData.songs[0].id);
+  if (playerData.currentSong === null) {
+    playSong(playerData.songs[0].id);
     return;
   }
   const nextSong = getNextSong();
   if (nextSong) {
     playSong(nextSong.id);
   } else {
-    userData.currentSong = null;
-    userData.songCurrentTime = 0;
+    playerData.currentSong = null;
+    playerData.songCurrentTime = 0;
     setPlayerDisplay();
     highlightCurrentSong();
     setPlayButtonAccessibleText();
@@ -79,8 +79,8 @@ const playNextSong = () => {
 };
 
 const setPlayerDisplay = () => {
-  const currentTitle = userData.currentSong?.title;
-  const currentArtist = userData.currentSong?.artist;
+  const currentTitle = playerData.currentSong?.title;
+  const currentArtist = playerData.currentSong?.artist;
 
   playingSong.textContent = currentTitle ? currentTitle : "";
   songArtist.textContent = currentArtist ? currentArtist : "";
@@ -90,22 +90,22 @@ const highlightCurrentSong = () => {
   const previousCurrentSong = document.querySelector('.playlist-song[aria-current="true"]');
   previousCurrentSong?.removeAttribute("aria-current");
   const songToHighlight = document.getElementById(
-    `song-${userData.currentSong?.id}`
+    `song-${playerData.currentSong?.id}`
   );
   
   songToHighlight?.setAttribute("aria-current", "true");
 };
 
 const setPlayButtonAccessibleText = () => {
-  const song = userData.currentSong;
-  playButton.setAttribute("aria-label", userData.currentSong ? `Play ${song.title}` : "Play");
+  const song = playerData.currentSong;
+  playButton.setAttribute("aria-label", playerData.currentSong ? `Play ${song.title}` : "Play");
 };
 
 playButton.addEventListener("click", () => {
-  if (userData.currentSong === null) {
-    playSong(userData.songs[0].id);
+  if (playerData.currentSong === null) {
+    playSong(playerData.songs[0].id);
   } else {
-    playSong(userData.currentSong.id, false);
+    playSong(playerData.currentSong.id, false);
   }
 });
 
