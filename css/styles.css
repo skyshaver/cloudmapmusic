@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Space Mono', sans-serif;
+    background: black;
+    color: white;
+    line-height: 1.6;
+}
+
+.wrapper {
+    min-height: 100vh;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 64, 64, 0.8),
+        rgba(71, 17, 116, 0.9)        
+    ),
+    url('../img/VZ_alias_spectrogram_1920_1080.jpg') no-repeat center/cover;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.header .logo {
+    width: 80px;
+}
+
+.header .header-right {
+    display: flex;    
+    align-items: center;
+    gap: 25px;
+}
+
+.header .header-right i {
+    margin-right: 5px;
+}
+
+.header .header-right a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.header .header-right a:hover {
+    color: purple;
+}
+
+.main-content {
+    display: flex;
+    gap: 50px;
+    padding: 0 40px;
+    max-width: 1100px;
+    height: 100%;
+    margin: 200px auto;
+    justify-content: center;
+    align-items: start;
+}
+
+.main-content form {
+    flex: 1;
+}
+
+.main-content .text-container {
+    flex: 1;
+}
+
+
+@media(max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 30px 10px 10px;
+    }
+
+    .header .header-right {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+}
