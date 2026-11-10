@@ -71,6 +71,20 @@ body {
     flex: 1;
 }
 
+.container-video {
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+    padding: 50px;
+    background-color: lightblue;
+}
+
+.container-video video {
+    border: 5px solid;
+    border-color: black;
+    padding: 10px;
+}
+
 
 @media(max-width: 768px) {
     .header {
