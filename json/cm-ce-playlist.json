@@ -1,0 +1,51 @@
+[
+  {
+    "id": 0,
+    "title": "Gentle Frog",
+    "artist": "Cloud Map",
+    "duration": "1:20",
+    "src": "/audio/Cloud Map - ContemplateEels - 01 Gentle Frog.mp3"
+  },
+  {
+    "id": 1,
+    "title": "Fancy Dress",
+    "artist": "Cloud Map",
+    "duration": "7:43",
+    "src": "/audio/Cloud Map - ContemplateEels - 02 Fancy Dress.mp3"
+  },
+  {
+    "id": 2,
+    "title": "Red With Stripes",
+    "artist": "Cloud Map",
+    "duration": "4:36",
+    "src": "/audio/Cloud Map - ContemplateEels - 03 Red With Stripes.mp3"
+  },
+  {
+    "id": 3,
+    "title": "The Monk Forgot His Shoes",
+    "artist": "Cloud Map",
+    "duration": "7:06",
+    "src": "/audio/Cloud Map - ContemplateEels - 04 The Monk Forgot His Shoes.mp3"
+  },
+  {
+    "id": 4,
+    "title": "Nice shoes man",
+    "artist": "Cloud Map",
+    "duration": "3:16",
+    "src": "/audio/Cloud Map - ContemplateEels - 05 Nice shoes man.mp3"
+  },
+  {
+    "id": 5,
+    "title": "The Handsome Italian Pt 1",
+    "artist": "Cloud Map",
+    "duration": "21:20",
+    "src": "/audio/Cloud Map - ContemplateEels - 06 The Handsome Italian Pt 1.mp3"
+  },
+  {
+    "id": 6,
+    "title": "The Handsome Italian Pt 2",
+    "artist": "Cloud Map",
+    "duration": "10:59",
+    "src": "/audio/Cloud Map - ContemplateEels - 07 The Handsome Italian Pt 2.mp3"
+  }
+]
