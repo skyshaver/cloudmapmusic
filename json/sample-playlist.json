@@ -1,0 +1,61 @@
+{
+  "playlistTitle": "Dax Playlist",
+  "songs": [
+    {
+      "id": 0,
+      "title": "Got The Blues",
+      "artist": "Dax",
+      "duration": "4:12",
+      "src": "/audio/Dax - Dax Songs - 01 Got The Blues.mp3"
+    },
+    {
+      "id": 1,
+      "title": "Eskimo Joe",
+      "artist": "Dax",
+      "duration": "3:35",
+      "src": "/audio/Dax - Dax Songs - 02 Eskimo Joe.mp3"
+    },
+    {
+      "id": 2,
+      "title": "Minimum Wage",
+      "artist": "Dax",
+      "duration": "4:13",
+      "src": "/audio/Dax - Dax Songs - 03 Minimum Wage.mp3"
+    },
+    {
+      "id": 3,
+      "title": "If It's God",
+      "artist": "Dax",
+      "duration": "2:38",
+      "src": "/audio/Dax - Dax Songs - 04 If Its God.mp3"
+    },
+    {
+      "id": 4,
+      "title": "Open Your Eyes",
+      "artist": "Dax",
+      "duration": "3:45",
+      "src": "/audio/Dax - Dax Songs - 05 Open Your Eyes.mp3"
+    },
+    {
+      "id": 5,
+      "title": "Tapu",
+      "artist": "Dax",
+      "duration": "3:28",
+      "src": "/audio/Dax - Dax Songs - 06 Tapu.mp3"
+    },
+    {
+      "id": 6,
+      "title": "Sixties Protest Song",
+      "artist": "Dax",
+      "duration": "3:34",
+      "src": "/audio/Dax - Dax Songs - 07 Sixties Protest Song.mp3"
+    },
+    {
+      "id": 7,
+      "title": "When It's Cloudy",
+      "artist": "Dax",
+      "duration": "4:11",
+      "src": "/audio/Dax - Dax Songs - 08 When Its Cloudy.mp3"
+    }
+  ]
+}
